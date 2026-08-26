@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Bricolage Grotesque";
+  --font-body: "Public Sans";
+  --font-data: "IBM Plex Mono";
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+  }
+  ::selection {
+    background: #0e7c66;
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid #0e7c66;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  input,
+  select,
+  textarea {
+    @apply bg-white;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-data text-[10px] font-medium uppercase tracking-[0.14em] text-ink-mute;
+  }
+  .field {
+    @apply w-full rounded-lg border border-ink-line px-3 py-2 text-sm text-ink
+           placeholder:text-ink-mute focus:border-jade focus:outline-none
+           focus:ring-2 focus:ring-jade/20;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2
+           text-sm font-semibold transition-colors disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-jade text-white hover:bg-jade-deep;
+  }
+  .btn-ghost {
+    @apply btn border border-ink-line bg-white text-ink-soft hover:bg-canvas;
+  }
+  .card {
+    @apply rounded-card border border-ink-line bg-surface shadow-card;
+  }
+  .num {
+    @apply font-data tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Sembunyikan scrollbar horizontal pada tab mobile tanpa mematikan scroll. */
+.no-bar::-webkit-scrollbar {
+  display: none;
+}
+.no-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
