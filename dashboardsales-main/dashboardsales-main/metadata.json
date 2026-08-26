@@ -1,0 +1,5 @@
+{
+  "name": "Sales Performance Dashboard",
+  "description": "A comprehensive sales dashboard connected to Google Sheets data, featuring real-time analytics, revenue trends, and category performance.",
+  "requestFramePermissions": []
+}
